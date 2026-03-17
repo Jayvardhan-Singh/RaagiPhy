@@ -29,7 +29,8 @@ def create_interactive_wheel(aaroh, avroh):
     <html>
     <head>
     <style>
-        .container { position: relative; width: 400px; height: 400px; margin: 0 auto; font-family: sans-serif; }
+        /* ADDED: transform: translateX(-50px) to shift the whole UI left by exactly one button width */
+        .container { position: relative; width: 400px; height: 400px; margin: 0 auto; transform: translateX(-50px); font-family: sans-serif; }
         .ring { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 2px dashed #bbb; border-radius: 50%; z-index: 1; pointer-events: none; width: 280px; height: 280px; }
         .btn { 
             position: absolute; transform: translate(-50%, -50%); border-radius: 50%; 
@@ -65,7 +66,7 @@ def create_interactive_wheel(aaroh, avroh):
         
         x, y = cx + r * math.cos(angle), cy + r * math.sin(angle)
         
-        # Color Logic based on your requirements
+        # Color Logic 
         if note in aaroh and note in avroh:
             bg_color = '#FFD700' # Gold (Both)
             text_color = '#000000' # Black text for contrast
